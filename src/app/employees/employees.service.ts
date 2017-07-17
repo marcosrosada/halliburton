@@ -15,6 +15,9 @@ export class EmployeesService {
   }
 
   getEmployees() {
+    /** 
+     * Deveria realizar uma chamada REST usando o módulo http do Angular usando o verbo GET pra alimentar a lista de funcionários
+    */
     return this.employees;
   }
 }

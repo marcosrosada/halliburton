@@ -16,24 +16,31 @@
 
 <div class="row">
   <form #formEmployee="ngForm" class="col s10" >
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" pattern="[A-Z,a-z]*" id="username" required/>
+        <label class="mdl-textfield__label" for="username">Username</label>
+        <span class="mdl-textfield__error">Only alphabet and no spaces, please!</span>
+      </div>
     <div class="row">
+      
       <div class="input-field col s12">
-        <input type="text" class="validate" name="name" [ngModel]="employee.name">
-        <label class="active">Nome</label>
+        <input type="text" id="tx_name" name="name" [ngModel]="employee.name" required>
+        <label class="active" for="tx_name">Nome</label>
+        <span class="mdl-js-textfield">Campo obrigatório!</span>
       </div>
     </div>
     
     <div class="row">
       <div class="input-field col s12">
-        <input type="text" class="validate" name="func" [ngModel]="employee.func">
-        <label class="active">Funçao</label>
+        <input type="text" id="tx_func" name="func" [ngModel]="employee.func" required>
+        <label class="active" for="tx_func">Funçao</label>
       </div>
     </div>
     
     <div class="row">
       <div class="input-field col s12">
-        <input type="text" class="validate" name="company" [ngModel]="employee.company">
-        <label class="active">Empresa</label>
+        <input type="text" id="tx_company" name="company" [ngModel]="employee.company" required>
+        <label class="active" for="tx_company">Empresa</label>
       </div>
     </div>
   </form>

@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class EmployeeFormComponent implements OnInit {
 
   private employee: any = {
-    id: 1, name: 'Marcos', func: 'FED', company: 'Halliburton'
+    //id: 1, name: 'Marcos', func: 'FED', company: 'Halliburton'
   };
   
   constructor() { }
