@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+.logo {
+    width: 64px;
+}
+nav.clean {
+  background: none;
+  box-shadow: none;
+  height: 40px;
+  line-height: 40px;
+}
+nav.clean .breadcrumb {
+  color: #212121;
+}
+nav.clean .active {
+  color: #adacac;
+}
+nav.clean .breadcrumb:before {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 12px;
+}
+nav.clean .breadcrumb {
+    font-size: 12px;
+}
+nav.clean .breadcrumb .material-icons{
+    line-height: 40px;
+    font-size: 15px;
+    height: 40px;
+    padding-right: 5px;
+}
+.container .row {
+    margin-bottom: 0;
+}
+.mar-t-0 {
+    margin-top: 0px;
+}  

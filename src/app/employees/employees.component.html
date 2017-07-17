@@ -1,0 +1,46 @@
+<section>
+    <article>
+      <nav class="clean" >
+          <div class="nav-wrapper">
+            <div class="col s6">
+              <a routerLink="/" class="breadcrumb">
+                  <i class="material-icons">home</i> Página inicial
+              </a>
+              <a class="breadcrumb active">Funcionários
+              </a>
+            </div>
+          </div>
+        </nav>
+        <h3 class="mar-t-0">Funcionários</h3>
+    </article>
+</section>
+
+<div class="row">
+  <form class="col s12">
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">search</i>
+        <input id="tx_search" type="text" class="validate" placeholder="Digite para filtrar">
+        <label for="tx_search" class="active">Pesquisar</label>
+      </div>
+    </div>
+  </form>
+</div>
+
+<table class="highlight">
+  <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Função</th>
+        <th>Empresa</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.func }}</td>
+      <td>{{ employee.company }}</td>
+    </tr>
+  </tbody>
+</table>
