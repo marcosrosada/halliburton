@@ -16,7 +16,7 @@
 </section>
 
 <div class="row">
-  <form class="col s12">
+  <form class="col s10">
     <div class="row">
       <div class="input-field col s12">
         <i class="material-icons prefix">search</i>
@@ -25,9 +25,15 @@
       </div>
     </div>
   </form>
+
+  <div class="col s2">
+    <button class="btn waves-effect waves-light blue-grey darken-4 mar-t-25" (click)="createEmployee()">
+      Adicionar
+    </button>
+  </div>
 </div>
 
-<table class="highlight">
+<table class="highlight responsive-table">
   <thead>
     <tr>
         <th>Nome</th>
