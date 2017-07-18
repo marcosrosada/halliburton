@@ -11,15 +11,32 @@ import { EmployeesService } from './employees.service';
 })
 export class EmployeesComponent implements OnInit {
 
-  private employees: Employee[];
+  employees: Employee[];
+  filterEmployee: string;
   
   constructor(
       private employeesService: EmployeesService,
       private router: Router
     ) { }
 
+
   ngOnInit() {
     this.employees = this.employeesService.getEmployees();
+  }
+  
+  /**
+   * Pra melhorar ainda mais a performace do filtro aplicado na lista, não implementei os Pipes
+   */
+  getEmployeesList() {
+    if (this.employees.length === 0 || this.filterEmployee === undefined || this.filterEmployee.trim() === '') {
+      return this.employees;
+    }
+
+    return this.employees.filter(
+       v => v.name.toLocaleLowerCase().includes(this.filterEmployee.toLocaleLowerCase()) || 
+            v.func.toLocaleLowerCase().includes(this.filterEmployee.toLocaleLowerCase()) ||
+            v.company.toLocaleLowerCase().includes(this.filterEmployee.toLocaleLowerCase())
+    );
   }
 
   createEmployee() {
