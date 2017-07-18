@@ -2,6 +2,7 @@
 .logo {
     width: 64px;
 }
+
 nav.clean {
   background: none;
   box-shadow: none;
@@ -32,7 +33,17 @@ nav.clean .breadcrumb .material-icons{
 }
 .mar-t-0 {
     margin-top: 0px;
-}  
+}
+.mar-b-0 {
+    margin-bottom: 0px !important;
+}
 .mar-t-25 {
     margin-top: 25px;
+}
+
+.ng-invalid.ng-touched:not(form) {
+    border-bottom: 1px solid#a94442
+}
+.f-red {
+    color: #a94442;
 }
