@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { EmployeesService } from '../employees.service';
+import { Employee } from './../employee.model';
 
 @Component({
   selector: 'app-employee-form',
@@ -10,9 +11,7 @@ import { EmployeesService } from '../employees.service';
 })
 export class EmployeeFormComponent implements OnInit {
 
-  private employee: any = {
-    id: 1, name: 'Marcos', func: 'FED', company: 'Halliburton'
-  };
+  employee: Employee = new Employee();
   
   constructor(
       private employeesService: EmployeesService,

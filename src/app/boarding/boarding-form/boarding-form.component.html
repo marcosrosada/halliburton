@@ -17,37 +17,20 @@
 <div class="row">
   <form #formBoarding="ngForm" class="col s10" >
     <div class="row">
-      <!-- <div class="input-field col s6">
-        <div class="select-wrapper">
-          <span class="caret">▼</span>
-          <input type="text" class="select-dropdown" data-activates="select-options-974700f0-7317-d075-7871-07c7dc8400e1" value="Option 2">
-            <ul id="select-options-974700f0-7317-d075-7871-07c7dc8400e1" class="dropdown-content select-dropdown" style="width: 480.833px; position: absolute; top: 0px; left: 0px; opacity: 1; display: none;">
-              <li class="disabled "><span>Choose your option</span></li>
-              <li class=""><span>Option 1</span></li>
-              <li class=""><span>Option 2</span></li>
-              <li class=""><span>Option 3</span></li>
-            </ul>
-            
-            <select materialize="material_select" name="selectedOption" ng-reflect-materialize="material_select" ng-reflect-materialize-select-options="[object Object],[object Object],[object Object]" ng-reflect-name="selectedOption" class="ng-untouched ng-valid initialized ng-dirty" ng-reflect-model="2">
-          <option disabled="" selected="" value="">Choose your option</option>
-          <!--template bindings={
-"ng-reflect-ng-for-of": "[object Object],[object Object],[object Object]"
-}<option value="1" ng-reflect-value="1">Option 1</option><option value="2" ng-reflect-value="2">Option 2</option><option value="3" ng-reflect-value="3">Option 3</option>
-        </select></div>
-        <label>Materialize Select</label>
-      </div> -->
-      <!-- <div class="input-field col s12 ">
-        <input type="text" materialize="autocomplete" [materializeParams]="[{'data': {'apple': null, 'google': null}}]">
+      <div class="input-field col s12 ">
+        <select materialize="material_select">
+            <option value="" disabled selected>Selecione um funcionário</option>
+            <option *ngFor="let employee of employees" value="employee">{{ employee.name }}</option>
+        </select>
+        <label class="active" for="tx_employee">Funcionário</label>
 
-        <label class="active" for="tx_name" >Nome</label>
-
-        <app-label-required [showError]="checkValidTouched(name)"></app-label-required>
-      </div> -->
+        <!-- <app-label-required [showError]="checkValidTouched(name)"></app-label-required> -->
+      </div>
     </div>
     
-    <div class="row mar-t-15">
+    <!-- <div class="row mar-t-15">
       <div class="input-field col s12 ">
-        <input type="text" id="tx_func" name="func" class="mar-b-0" [ngModel]="boarding.func" #func="ngModel" required>
+        <input type="text" id="tx_func" name="func" class="mar-b-0" #func="ngModel" required>
         <label class="active" for="tx_func">Funçao</label>
         
         <app-label-required [showError]="checkValidTouched(func)"></app-label-required>
@@ -56,20 +39,20 @@
     
     <div class="row mar-t-15">
       <div class="input-field col s12 ">
-        <input type="text" id="tx_company" name="company" class="mar-b-0" [ngModel]="boarding.company" #company="ngModel" required>
+        <input type="text" id="tx_company" name="company" class="mar-b-0" #company="ngModel" required>
         <label class="active" for="tx_company">Empresa</label>
         
         <app-label-required [showError]="checkValidTouched(company)"></app-label-required>
       </div>
-    </div>
+    </div> -->
   </form>
 </div>
 
-
+<!-- 
 <div class="col s2 mar-t-15">
   <button class="btn waves-effect waves-light blue-grey darken-4" type="button" 
         [disabled]="!formBoarding.valid" 
         (click)="onSubmit(formBoarding)" >
     Salvar
   </button>
-</div>
+</div> -->

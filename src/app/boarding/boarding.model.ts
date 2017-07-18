@@ -7,7 +7,7 @@ export class Boarding {
     dtBoarding: Date;
     dtLanding: Date;
 
-    constructor(_id: number, _employee: any, _dtBoarding: Date, _dtLanding: Date) {
+    constructor(_id: number = null, _employee: any = null, _dtBoarding: Date = null, _dtLanding: Date = null) {
         this.id = _id;
         this.employee = _employee;
         this.dtBoarding = _dtBoarding;

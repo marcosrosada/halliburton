@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import {MaterializeDirective} from "angular2-materialize";
 import { BoardingService } from './../boarding.service';
+import { EmployeesService } from './../../employees/employees.service';
+import { Employee } from './../../employees/employee.model';
+import { Boarding } from './../boarding.model';
+
 @Component({
   selector: 'app-boarding-form',
   templateUrl: './boarding-form.component.html',
@@ -9,16 +14,20 @@ import { BoardingService } from './../boarding.service';
 })
 export class BoardingFormComponent implements OnInit {
 
-  private boarding: any = {
-    id: 1, name: 'Marcos', func: 'FED', company: 'Halliburton'
-  };
+  boarding: Boarding = new Boarding();
+  employees: Employee[];
+
+  framework: string = 'Angular 2';
   
+
   constructor(
       private boardingService: BoardingService,
+      private employeesService: EmployeesService,
       private router: Router
   ) { }
 
   ngOnInit() {
+    this.employees = this.employeesService.getEmployees();
   }
 
   onSubmit(form) {

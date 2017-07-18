@@ -5,7 +5,7 @@ export class Employee {
   func: string;
   company: string;
 
-  constructor(_id: number, _name: string, _func: string, _company: string) {
+  constructor(_id: number = null, _name: string = null, _func: string = null, _company: string = null) {
     this.id = _id;
     this.name = _name;
     this.func = _func;

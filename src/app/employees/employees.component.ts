@@ -1,3 +1,4 @@
+import { Employee } from './employee.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -10,7 +11,7 @@ import { EmployeesService } from './employees.service';
 })
 export class EmployeesComponent implements OnInit {
 
-  private employees: any[];
+  private employees: Employee[];
   
   constructor(
       private employeesService: EmployeesService,

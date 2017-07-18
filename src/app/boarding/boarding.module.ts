@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { MaterializeModule } from "angular2-materialize";
 
 import { BoardingRoutingModule } from './boarding.routing.module';
 import { BoardingService } from './boarding.service';
@@ -15,7 +16,8 @@ import { LabelRequiredModule } from './../shared/label-required/label-required.m
     FormsModule,
     HttpModule,
     BoardingRoutingModule,
-    LabelRequiredModule
+    LabelRequiredModule,
+    MaterializeModule
   ],
   declarations: [
     BoardingComponent,
