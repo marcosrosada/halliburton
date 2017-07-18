@@ -1,18 +1,20 @@
-import { Boarding } from './boarding.model';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+
+import { Boarding } from './boarding.model';
+import { EmployeesService } from './../employees/employees.service';
 
 @Injectable()
 export class BoardingService {
 
   boardings: any = [
-    { id: 1, name: 'Marcos Rosada', func: 'Front-End Developer', company: 'Halliburton' },
-    { id: 2, name: 'Joziane Azevedo', func: 'Recursos humanos', company: 'Halliburton' },
-    { id: 3, name: 'Mariane Almeida', func: 'Recursos humanos', company: 'Halliburton' },
-    { id: 4, name: 'Raquel Fiuza de Azevedo', func: 'Recursos humanos', company: 'Halliburton' }
+    //new Boarding(1, { id: 1, name: 'Marcos Rosada', func: 'Front-End Developer', company: 'Halliburton' }, new Date(), new Date());
   ];
 
-  constructor(private http: Http) { }
+  constructor(
+      private employeesService: EmployeesService,
+      private http: Http
+    ) { }
 
   getBoardings() {
     /** 
