@@ -6,6 +6,7 @@ import { EmployeesModule } from './employees/employees.module';
 import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { LabelRequiredModule } from './shared/label-required/label-required.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     EmployeesModule,
     BoardingModule,
+    LabelRequiredModule,
     AppRoutingModule
   ],
   providers: [],

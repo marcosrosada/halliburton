@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { BoardingsService } from './boarding.service';
+import { BoardingService } from './boarding.service';
 import { EmployeesService } from './../employees/employees.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class BoardingComponent implements OnInit {
   private boardings: any[];
   
   constructor(
-      private boardingsService: BoardingsService,
+      private boardingsService: BoardingService,
       private employeesService: EmployeesService,
       private router: Router
     ) { }
@@ -26,7 +26,7 @@ export class BoardingComponent implements OnInit {
   }
 
   createBoarding() {
-    this.router.navigate(['/boardings/form']);
+    this.router.navigate(['/boarding/form']);
   }
 
 }

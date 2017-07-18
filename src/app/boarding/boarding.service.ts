@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
 @Injectable()
-export class BoardingsService {
+export class BoardingService {
 
   boardings: any = [
     { id: 1, name: 'Marcos Rosada', func: 'Front-End Developer', company: 'Halliburton' },

@@ -7,20 +7,20 @@ import { EmployeesRoutingModule } from './employees.routing.module';
 import { EmployeesService } from './employees.service';
 import { EmployeesComponent } from './employees.component';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
-import { LabelRequiredComponent } from './../shared/label-required/label-required.component';
 import { FilterPipe } from './../shared/filter.pipe';
+import { LabelRequiredModule } from './../shared/label-required/label-required.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     HttpModule,
-    EmployeesRoutingModule
+    EmployeesRoutingModule,
+    LabelRequiredModule
   ],
   declarations: [
     EmployeesComponent,
     EmployeeFormComponent,
-    LabelRequiredComponent,
     FilterPipe
   ],
   providers: [

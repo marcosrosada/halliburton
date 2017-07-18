@@ -4,16 +4,18 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { BoardingRoutingModule } from './boarding.routing.module';
-import { BoardingsService } from './boarding.service';
+import { BoardingService } from './boarding.service';
 import { BoardingComponent } from './boarding.component';
 import { BoardingFormComponent } from './boarding-form/boarding-form.component';
+import { LabelRequiredModule } from './../shared/label-required/label-required.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     HttpModule,
-    BoardingRoutingModule
+    BoardingRoutingModule,
+    LabelRequiredModule
   ],
   declarations: [
     BoardingComponent,
@@ -23,7 +25,7 @@ import { BoardingFormComponent } from './boarding-form/boarding-form.component';
     BoardingComponent
   ],
   providers: [
-    BoardingsService
+    BoardingService
   ]
 })
 export class BoardingModule { }
