@@ -18,9 +18,9 @@
   <form #formBoarding="ngForm" class="col s10" >
     <div class="row">
       <div class="input-field col s12 ">
-        <select materialize="material_select" name="employee" #employee required>
+        <select materialize="material_select" name="employee" #employee required (change)="onChangeEmployee($event.target.value)">
             <option value="" disabled selected>Selecione um funcionário</option>
-            <option *ngFor="let employee of employees" value="employee">{{ employee.name }}</option>
+            <option *ngFor="let employee of employees" [value]="employee.id">{{ employee.name }}</option>
         </select>
         <label for="tx_employee">Funcionário</label>
 

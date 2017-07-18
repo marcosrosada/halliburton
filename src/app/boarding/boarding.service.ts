@@ -33,8 +33,10 @@ export class BoardingService {
     this.http.post('https://httpbin.org/post', JSON.stringify(boarding))
       .map(res => res)
       .subscribe(dados => {
-        this.boardings.push(boarding);
+        // this.boardings.push(boarding);
       });
+
+    this.boardings.push(boarding);
   }
 
 }

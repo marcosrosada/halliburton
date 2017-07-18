@@ -14,29 +14,34 @@ import { Boarding } from './../boarding.model';
 })
 export class BoardingFormComponent implements OnInit {
 
-  boarding: Boarding = new Boarding();
+  boarding: Boarding;
   employees: Employee[];
-
-  framework: string = 'Angular 2';
+  employeeSelected: any;
   
 
   constructor(
       private boardingService: BoardingService,
       private employeesService: EmployeesService,
       private router: Router
-  ) { }
+  ) { 
+    this.boarding = new Boarding();
+  }
 
   ngOnInit() {
     this.employees = this.employeesService.getEmployees();
   }
 
+  onChangeEmployee(employeeId: number) {
+    this.employeeSelected = this.employees.filter( item => item.id == employeeId )[0];
+    this.boarding.employee = this.employeeSelected;    
+  }
+
+  
   onSubmit(form) {
-    console.log(form.value);
     console.log(this.boarding);
+    this.boardingService.createBoarding(this.boarding);
     
-    // this.boardingService.createBoarding(form.value);
-    
-    // this.router.navigate(['/boarding']);
+    this.router.navigate(['/boarding']);
   }
 
   checkValidTouched(field) {
