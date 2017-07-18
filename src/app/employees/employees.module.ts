@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { EmployeesRoutingModule } from './employees.routing.module';
 import { EmployeesService } from './employees.service';
@@ -12,6 +13,7 @@ import { LabelRequiredComponent } from './../shared/label-required/label-require
   imports: [
     CommonModule,
     FormsModule,
+    HttpModule,
     EmployeesRoutingModule
   ],
   declarations: [

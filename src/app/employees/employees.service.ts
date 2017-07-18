@@ -1,4 +1,8 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
+
+import { Employee } from './employee.model';
 
 @Injectable()
 export class EmployeesService {
@@ -10,14 +14,25 @@ export class EmployeesService {
     { id: 4, name: 'Raquel Fiuza de Azevedo', func: 'Recursos humanos', company: 'Halliburton' }
   ];
 
-  constructor() { 
+  constructor(private http: Http) { 
     //localStorage.setItem('employees', this.employees);
   }
 
   getEmployees() {
     /** 
-     * Deveria realizar uma chamada REST usando o módulo http do Angular usando o verbo GET pra alimentar a lista de funcionários
+     * Deveria realizar uma chamada REST do módulo http do Angular usando o verbo GET pra alimentar a lista de funcionários
     */
     return this.employees;
+  }
+
+  createEmployee(employee:Employee) {
+    /** 
+     * Deveria realizar uma chamada REST do módulo http do Angular usando o verbo POST pra Salvar um funcionário
+    */
+    this.http.post('https://httpbin.org/post', JSON.stringify(employee))
+      .map(res => res)
+      .subscribe(dados => {
+        this.employees.push(employee);
+      });
   }
 }
