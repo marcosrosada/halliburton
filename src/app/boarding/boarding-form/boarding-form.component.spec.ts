@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LabelRequiredComponent } from './label-required.component';
+import { BoardingFormComponent } from './boarding-form.component';
 
-describe('LabelRequiredComponent', () => {
-  let component: LabelRequiredComponent;
-  let fixture: ComponentFixture<LabelRequiredComponent>;
+describe('BoardingFormComponent', () => {
+  let component: BoardingFormComponent;
+  let fixture: ComponentFixture<BoardingFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LabelRequiredComponent ]
+      declarations: [ BoardingFormComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LabelRequiredComponent);
+    fixture = TestBed.createComponent(BoardingFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

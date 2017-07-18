@@ -14,9 +14,7 @@ export class EmployeesService {
     { id: 4, name: 'Raquel Fiuza de Azevedo', func: 'Recursos humanos', company: 'Halliburton' }
   ];
 
-  constructor(private http: Http) { 
-    //localStorage.setItem('employees', this.employees);
-  }
+  constructor(private http: Http) { }
 
   getEmployees() {
     /** 
@@ -28,11 +26,14 @@ export class EmployeesService {
   createEmployee(employee:Employee) {
     /** 
      * Deveria realizar uma chamada REST do módulo http do Angular usando o verbo POST pra Salvar um funcionário
+     * Para simular uma requisição, foi ultilizado um Client Testing Service 
     */
     this.http.post('https://httpbin.org/post', JSON.stringify(employee))
       .map(res => res)
       .subscribe(dados => {
-        this.employees.push(employee);
+        
       });
+
+      this.employees.push(employee);
   }
 }

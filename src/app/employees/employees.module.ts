@@ -8,6 +8,7 @@ import { EmployeesService } from './employees.service';
 import { EmployeesComponent } from './employees.component';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
 import { LabelRequiredComponent } from './../shared/label-required/label-required.component';
+import { FilterPipe } from './../shared/filter.pipe';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { LabelRequiredComponent } from './../shared/label-required/label-require
   declarations: [
     EmployeesComponent,
     EmployeeFormComponent,
-    LabelRequiredComponent
+    LabelRequiredComponent,
+    FilterPipe
   ],
   providers: [
     EmployeesService

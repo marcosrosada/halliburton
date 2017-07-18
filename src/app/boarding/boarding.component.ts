@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { BoardingsService } from './boarding.service';
+import { EmployeesService } from './../employees/employees.service';
 
 @Component({
   selector: 'app-boarding',
@@ -7,9 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BoardingComponent implements OnInit {
 
-  constructor() { }
+  private boardings: any[];
+  
+  constructor(
+      private boardingsService: BoardingsService,
+      private employeesService: EmployeesService,
+      private router: Router
+    ) { }
 
   ngOnInit() {
+    this.boardings = this.boardingsService.getBoardings();
+    console.log(this.employeesService.getEmployees());
+     
+  }
+
+  createBoarding() {
+    this.router.navigate(['/boardings/form']);
   }
 
 }

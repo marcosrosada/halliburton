@@ -1,3 +1,52 @@
-<p>
-  boarding works!
-</p>
+<section>
+    <article>
+      <nav class="clean" >
+          <div class="nav-wrapper">
+            <div class="col s6">
+              <a routerLink="/" class="breadcrumb">
+                  <i class="material-icons">home</i> Página inicial
+              </a>
+              <a class="breadcrumb active">Funcionários
+              </a>
+            </div>
+          </div>
+        </nav>
+        <h3 class="mar-t-0">Funcionários</h3>
+    </article>
+</section>
+
+<div class="row">
+  <form class="col s10">
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">search</i>
+        <input id="tx_search" type="text" class="validate" #filterText placeholder="Digite para filtrar">
+        <label for="tx_search" class="active">Pesquisar</label>
+      </div>
+    </div>
+  </form>
+
+  <div class="col s2">
+    <button class="btn waves-effect waves-light blue-grey darken-4 mar-t-25" (click)="createBoarding()">
+      Adicionar
+    </button>
+  </div>
+</div>
+
+<table class="highlight responsive-table">
+  <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Função</th>
+        <th>Empresa</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let boarding of boardings">
+      <td>{{ boarding.name }}</td>
+      <td>{{ boarding.func }}</td>
+      <td>{{ boarding.company }}</td>
+    </tr>
+  </tbody>
+</table>
