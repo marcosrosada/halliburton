@@ -6,6 +6,7 @@ import { EmployeesRoutingModule } from './employees.routing.module';
 import { EmployeesService } from './employees.service';
 import { EmployeesComponent } from './employees.component';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
+import { LabelRequiredComponent } from './../shared/label-required/label-required.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { EmployeeFormComponent } from './employee-form/employee-form.component';
   ],
   declarations: [
     EmployeesComponent,
-    EmployeeFormComponent
+    EmployeeFormComponent,
+    LabelRequiredComponent
   ],
   providers: [
     EmployeesService

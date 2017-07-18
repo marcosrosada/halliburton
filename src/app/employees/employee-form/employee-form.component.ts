@@ -18,7 +18,10 @@ export class EmployeeFormComponent implements OnInit {
 
   onSubmit(form) {
     console.log(form);
-    
+  }
+
+  checkValidTouched(field) {
+      return !field.valid && field.touched;
   }
 
 }
