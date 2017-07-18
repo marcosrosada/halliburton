@@ -31,9 +31,12 @@ export class BoardingFormComponent implements OnInit {
   }
 
   onSubmit(form) {
-    this.boardingService.createBoarding(form.value);
+    console.log(form.value);
+    console.log(this.boarding);
     
-    this.router.navigate(['/boarding']);
+    // this.boardingService.createBoarding(form.value);
+    
+    // this.router.navigate(['/boarding']);
   }
 
   checkValidTouched(field) {
