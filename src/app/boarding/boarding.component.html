@@ -36,17 +36,17 @@
 <table class="highlight responsive-table">
   <thead>
     <tr>
-        <th>Nome</th>
-        <th>Função</th>
-        <th>Empresa</th>
+        <th>Funcionário</th>
+        <th>Embarque</th>
+        <th>Desembarque</th>
     </tr>
   </thead>
 
   <tbody>
     <tr *ngFor="let boarding of boardings">
-      <td>{{ boarding.name }}</td>
-      <td>{{ boarding.func }}</td>
-      <td>{{ boarding.company }}</td>
+      <td>{{ boarding?.employee.name }}</td>
+      <td>{{ boarding.dtBoarding | date:'dd/MM/yyyy' }}</td>
+      <td>{{ boarding.dtLanding | date:'dd/MM/yyyy' }}</td>
     </tr>
   </tbody>
 </table>

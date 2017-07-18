@@ -1,15 +1,16 @@
 import { Employee } from './../employees/employee.model';
 
 export class Boarding {
-    constructor(id: number, employee: Employee, dtBoarding: Date, dtLanding: Date) {
-        this.id = id;
-        this.employee = employee;
-        this.dtBoarding = dtBoarding;
-        this.dtLanding = dtLanding;
-    }
 
     id: number;
     employee: Employee;
     dtBoarding: Date;
     dtLanding: Date;
+
+    constructor(_id: number, _employee: any, _dtBoarding: Date, _dtLanding: Date) {
+        this.id = _id;
+        this.employee = _employee;
+        this.dtBoarding = _dtBoarding;
+        this.dtLanding = _dtLanding;
+    }
 }

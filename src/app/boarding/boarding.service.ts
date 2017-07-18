@@ -2,15 +2,16 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
 import { Boarding } from './boarding.model';
+import { Employee } from './../employees/employee.model';
 import { EmployeesService } from './../employees/employees.service';
 
 @Injectable()
 export class BoardingService {
 
   boardings: any = [
-    //new Boarding(1, { id: 1, name: 'Marcos Rosada', func: 'Front-End Developer', company: 'Halliburton' }, new Date(), new Date());
+    new Boarding(1, new Employee(1, 'Marcos Rosada', 'Front-End Developer', 'Halliburton'), new Date(), new Date())
   ];
-
+  
   constructor(
       private employeesService: EmployeesService,
       private http: Http
