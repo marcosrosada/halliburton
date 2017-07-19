@@ -8,10 +8,11 @@ import { Employee } from './employee.model';
 export class EmployeesService {
 
   employees: any = [
-      new Employee(1, 'Marcos Rosada', 'Front-End Developer', 'Halliburton'),
+      new Employee(1, 'Marcos Rosada', 'Arquiteto Front-End', 'Halliburton'),
       new Employee(2, 'Joziane Azevedo', 'Recursos humanos', 'Halliburton'),
       new Employee(3, 'Mariane Almeida', 'Gerente de Projetos', 'Petrobras'),
-      new Employee(4, 'Raquel Fiuza de Azevedo', 'Recursos humanos', 'Halliburton')
+      new Employee(4, 'Lucas Benedito Fogatti Marinho', 'Desenvolvedor Back-End', 'Petrobras'),
+      new Employee(5, 'Raquel Fiuza de Azevedo', 'Recursos humanos', 'Halliburton')
   ];
 
   constructor(private http: Http) { }

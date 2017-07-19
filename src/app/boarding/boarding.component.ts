@@ -1,3 +1,4 @@
+import { Boarding } from './boarding.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -10,18 +11,18 @@ import { BoardingService } from './boarding.service';
 })
 export class BoardingComponent implements OnInit {
 
-  boardings: any[];
+  boardings: Boarding[];
   filterBoarding: string;
   filterdtBoarding: string;
   filterdtLanding: string;
   
   constructor(
-      private boardingsService: BoardingService,
+      private boardingService: BoardingService,
       private router: Router
     ) { }
 
   ngOnInit() {
-    this.boardings = this.boardingsService.getBoardings();
+    this.boardings = this.boardingService.getBoardings();
   }
   
   
