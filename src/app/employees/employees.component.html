@@ -43,6 +43,11 @@
   </thead>
 
   <tbody>
+    <!-- Resolvi usar o filter dessa lista de funcionários usando Pipe que é muito parecido com o que tinhamos no Angular 1.x -->
+    <!-- Mas essa feature não veio para o Angular 2 por não ser tão perfomático. -->
+    <!-- Poderiamos chamar aqui o método getEmployeesList(), como foi feito na lista Controle de embarques -->
+    
+    <!-- <tr *ngFor="let employee of getEmployeesList()"> -->
     <tr *ngFor="let employee of employees | filterEmployee:filterEmployee">
       <td>{{ employee.name }}</td>
       <td>{{ employee.func }}</td>

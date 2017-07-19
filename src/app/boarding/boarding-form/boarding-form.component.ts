@@ -38,7 +38,6 @@ export class BoardingFormComponent implements OnInit {
 
   
   onSubmit(form) {
-    console.log(this.boarding);
     this.boardingService.createBoarding(this.boarding);
     
     this.router.navigate(['/boarding']);

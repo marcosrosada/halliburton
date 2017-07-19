@@ -9,8 +9,8 @@ import { EmployeesService } from './../employees/employees.service';
 export class BoardingService {
 
   boardings: any = [
-    new Boarding(1, new Employee(1, 'Marcos Rosada', 'Front-End Developer', 'Halliburton'), new Date(), new Date()),
-    new Boarding(2, new Employee(3, 'Mariane Almeida', 'Gerente de Projetos', 'Petrobras'), new Date(), new Date())
+    new Boarding(1, new Employee(1, 'Marcos Rosada', 'Front-End Developer', 'Halliburton'), new Date(2017, 6, 20), new Date(2017, 7, 10)),
+    new Boarding(2, new Employee(3, 'Mariane Almeida', 'Gerente de Projetos', 'Petrobras'), new Date(2017, 6, 25), new Date(2017, 7, 15))
   ];
   
   constructor(

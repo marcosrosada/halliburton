@@ -25,7 +25,7 @@ export class EmployeesComponent implements OnInit {
   }
   
   /**
-   * Pra melhorar ainda mais a performace do filtro aplicado na lista, não implementei os Pipes
+   * Pra melhorar ainda mais a performace do filtro aplicado na lista, ao invés do Pipes
    */
   getEmployeesList() {
     if (this.employees.length === 0 || this.filterEmployee === undefined || this.filterEmployee.trim() === '') {

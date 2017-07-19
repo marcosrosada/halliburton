@@ -18,10 +18,20 @@
 <div class="row">
   <form class="col s10">
     <div class="row">
-      <div class="input-field col s12">
+      <div class="input-field col s6">
         <i class="material-icons prefix">search</i>
-        <input id="tx_search" type="text" class="validate" #filterText placeholder="Digite para filtrar">
-        <label for="tx_search" class="active">Pesquisar</label>
+        <input type="text"[(ngModel)]="filterBoarding" name="filterBoarding" placeholder="Digite para filtrar">
+        <label class="active">Pesquisar</label>
+      </div>
+      
+      <div class="input-field col s3 ">
+        <input type="date" name="dtBoarding" [(ngModel)]="filterdtBoarding" required  />
+        <label class="active" for="tx_func">Data de Embarque</label>
+      </div>
+      
+      <div class="input-field col s3 ">
+        <input type="date" name="dtLanding" [(ngModel)]="filterdtLanding" required  />
+        <label class="active" for="tx_func">Data de Desembarque</label>
       </div>
     </div>
   </form>
@@ -43,7 +53,7 @@
   </thead>
 
   <tbody>
-    <tr *ngFor="let boarding of boardings">
+    <tr *ngFor="let boarding of getBoardingsList()">
       <td>{{ boarding?.employee.name }}</td>
       <td>{{ boarding.dtBoarding | date:'dd/MM/yyyy' }}</td>
       <td>{{ boarding.dtLanding | date:'dd/MM/yyyy' }}</td>
