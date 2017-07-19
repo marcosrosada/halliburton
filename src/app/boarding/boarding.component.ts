@@ -31,22 +31,48 @@ export class BoardingComponent implements OnInit {
       return this.boardings;
     }
 
-    if (this.filterBoarding) {
-      return this.boardings.filter( boarding => boarding.employee.name.toLocaleLowerCase().includes(this.filterBoarding.toLocaleLowerCase()) );
-    }
     
-    if (this.filterdtBoarding) {
+    
+    if (this.filterBoarding && this.filterdtBoarding && this.filterdtLanding) {
       return this.boardings.filter( boarding => {
           let dateBoarding:Date = new Date(boarding.dtBoarding),
-              datefilter:Date = new Date(this.filterdtBoarding);
-          return dateBoarding.getTime() >= datefilter.getTime();
+              dateLanding:Date = new Date(boarding.dtLanding),
+              datefilterB:Date = new Date(this.filterdtBoarding),
+              datefilterL:Date = new Date(this.filterdtLanding);
+
+              datefilterL.setDate(datefilterL.getDate() + 1);
+          return boarding.employee.name.toLocaleLowerCase().includes(this.filterBoarding.toLocaleLowerCase()) && 
+                  dateBoarding >= datefilterB && dateLanding < datefilterL;
       } );
     }
-    if (this.filterdtLanding) {
+    else if (this.filterBoarding) {
+      return this.boardings.filter( boarding => boarding.employee.name.toLocaleLowerCase().includes(this.filterBoarding.toLocaleLowerCase()) );
+    }
+    else if (this.filterdtBoarding && this.filterdtLanding) {
+      return this.boardings.filter( boarding => {
+          let dateBoarding:Date = new Date(boarding.dtBoarding),
+              dateLanding:Date = new Date(boarding.dtLanding),
+              datefilterB:Date = new Date(this.filterdtBoarding),
+              datefilterL:Date = new Date(this.filterdtLanding);
+
+              datefilterL.setDate(datefilterL.getDate() + 1);
+          return dateBoarding >= datefilterB && dateLanding < datefilterL;
+      } );
+    }
+    else if (this.filterdtBoarding) {
+      return this.boardings.filter( boarding => {
+          let dateBoarding:Date = new Date(boarding.dtBoarding),
+              datefilterL:Date = new Date(this.filterdtBoarding);
+          return dateBoarding >= datefilterL;
+      } );
+    }
+    else if (this.filterdtLanding) {
       return this.boardings.filter( boarding => {
           let dateLanding:Date = new Date(boarding.dtLanding),
               datefilter:Date = new Date(this.filterdtLanding);
-          return dateLanding.getTime() <= datefilter.getTime();
+
+              datefilter.setDate(datefilter.getDate() + 1);
+          return dateLanding < datefilter;
       } );
     }
   }
