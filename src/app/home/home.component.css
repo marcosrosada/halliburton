@@ -1,0 +1,11 @@
+.main {
+    display: flex;
+    height: 600px; 
+}
+
+.container-logo {
+    width: 200px;  
+    height: 200px; 
+    margin: auto;
+    opacity: 0.3;  
+}
