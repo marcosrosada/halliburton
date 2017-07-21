@@ -35,6 +35,6 @@ export class EmployeesService {
         
       });
 
-      this.employees.push(employee);
+      this.employees.push( new Employee(this.employees.length + 1, employee.name, employee.func, employee.company ) );
   }
 }
