@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { MaterializeModule } from "angular2-materialize";
+
 import { BoardingModule } from './boarding/boarding.module';
 import { EmployeesModule } from './employees/employees.module';
 import { AppRoutingModule } from './app.routing.module';
@@ -18,6 +20,7 @@ import { LabelRequiredModule } from './shared/label-required/label-required.modu
     EmployeesModule,
     BoardingModule,
     LabelRequiredModule,
+    MaterializeModule,
     AppRoutingModule
   ],
   providers: [],

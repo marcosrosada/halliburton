@@ -3,6 +3,12 @@
     width: 64px;
 }
 
+@media (max-width: 600px) {
+    .logo {
+        width: 56px;
+    }
+}
+
 nav.clean {
   background: none;
   box-shadow: none;
